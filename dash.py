@@ -145,9 +145,9 @@ def collect_data(filename,sheetname):
     data = pd.read_excel(filename,sheet_name=sheetname)
     return data
 
-merged_raw_data = collect_data("data/Combined_Analysissheet.xlsx","raw_data")
+merged_raw_data = collect_data("Combined_Analysissheet.xlsx","raw_data")
 merged_raw_data['Post_DateTime'] = pd.to_datetime(merged_raw_data['Post_DateTime'])
-merged_unique_authors_data = collect_data("data/Combined_Analysissheet.xlsx",'unique_authors')
+merged_unique_authors_data = collect_data("Combined_Analysissheet.xlsx",'unique_authors')
 
 communities = merged_raw_data['Community'].value_counts()
 # st.dataframe(communities)
